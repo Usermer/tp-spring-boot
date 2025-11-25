@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des produits</title>
+</head>
+<body>
+<h1>Bienvenue !</h1>
+<p>Vous êtes connecté avec succès.</p>
+
+<a href="/logout">Logout</a>
+
+<h1>Liste des Produits</h1>
+
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Prix</th>
+        <th>Code Barre</th>
+        <th>Date Expiration</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr th:each="p : ${produits}">
+        <td th:text="${p.id}">1</td>
+        <td th:text="${p.nom}">Nom</td>
+        <td th:text="${p.description}">Desc</td>
+        <td th:text="${p.prix}">Prix</td>
+        <td th:text="${p.codeBarre}">CB</td>
+        <td th:text="${p.dateExpiration}">Date</td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
